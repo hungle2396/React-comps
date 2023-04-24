@@ -2,7 +2,7 @@
 
 const Button = ({children}: ButtonProps) => {
     return (
-        <button>{children}</button>
+        <button className="text-orange-400 bg-red-400">{children}</button>
     )
 }
 
