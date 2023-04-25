@@ -10,7 +10,7 @@ const App = () => {
     return (
         <div>
             <div>
-                <Button secondary outline rounded onClick={handleClick}>
+                <Button className="mb-5" secondary outline rounded onClick={handleClick}>
                     <GoBell />
                     Button 1
                 </Button>
@@ -28,7 +28,7 @@ const App = () => {
                 <Button secondary rounded>Button 5</Button>
             </div>
             <div>
-                <Button primary outline danger>Button 6</Button>
+                <Button primary outline>Button 6</Button>
             </div>
         </div>
     )

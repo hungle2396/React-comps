@@ -1,7 +1,4 @@
-
-
-interface ButtonProps {
-    children?: React.ReactNode;
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement>{
     primary?: boolean;
     secondary?: boolean;
     success?: boolean;
