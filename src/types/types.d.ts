@@ -7,3 +7,11 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement>{
     outline?: boolean;
     rounded?: boolean;
 }
+
+interface AccordionProps {
+    items: {
+        id: string;
+        label: string;
+        content: string;
+    }[];
+}
