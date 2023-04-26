@@ -1,25 +1,22 @@
-import Accordion from "./components/Accordion";
+import Dropdown from "./components/Dropdown";
 
 const App = () => {
-    const items = [
+    const options = [
         {
-            id: "a1",
-            label: "Can I use React on a project?",
-            content: "You need to have at least Node version 10. Next, you need to have the node package manager (npm). It gets automatically installed on your PC with Node. The npm version needs to be 5.2 or higher."
+            label: "Red",
+            value: "red"
         },
         {
-            id: "a2",
-            label: "Can I use Javascript on project?",
-            content: "js makes responsive design easier. JavaScript has become integral to the Internet experience as developers build increased interaction and complexity into their applications. Search engines, ecommerce, content management systems, responsive design, social media and phone apps would not be possible without it."
+            label: "Green",
+            value: "green",
         },
         {
-            id: "a3",
-            label: "Can I use CSS on a project?",
-            content: "Cascading Style Sheets is a style sheet language used for describing the presentation of a document written in a markup language such as HTML or XML. CSS is a cornerstone technology of the World Wide Web, alongside HTML and JavaScript."
+            label: "Blue",
+            value: "blue"
         }
     ]
 
-    return <Accordion items={items} />
+    return <Dropdown options={options} />
 };
 
 export default App;

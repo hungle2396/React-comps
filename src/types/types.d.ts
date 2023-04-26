@@ -15,3 +15,10 @@ interface AccordionProps {
         content: string;
     }[];
 }
+
+interface DropdownProps {
+    options: {
+        label: string;
+        value: string;
+    }[]
+}
