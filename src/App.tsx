@@ -1,34 +1,15 @@
 import { useState } from "react";
-import Dropdown from "./components/Dropdown";
+import Modal from "./components/Modal";
+import Button from "./components/Button";
 
 const App = () => {
-    const [selection, setSelection] = useState<OptionProps | null>(null);
-
-
-    const handleSelect = (option: OptionProps) => {
-        setSelection(option);
-    }
-
-    const options = [
-        {
-            label: "Red",
-            value: "red"
-        },
-        {
-            label: "Green",
-            value: "green",
-        },
-        {
-            label: "Blue",
-            value: "blue"
-        }
-    ]
+    
 
     return (
-        <div className="flex">
-            <Dropdown options={options} value={selection} onChange={handleSelect} />
+        <div>
+            <Button primary>Open Modal</Button>
+            <Modal />
         </div>
-        
     )
 };
 
