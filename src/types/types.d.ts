@@ -16,9 +16,18 @@ interface AccordionProps {
     }[];
 }
 
+interface OptionProps {
+    label: string;
+    value: string;
+}
+
 interface DropdownProps {
-    options: {
-        label: string;
-        value: string;
-    }[]
+    options: OptionProps[];
+    onChange: (option: OptionProps) => void;
+    value: OptionProps | null;
+}
+
+interface PanelProps extends React.HTMLAttributes<HTMLDivElement> {
+    children: React.ReactNode;
+    className?: string;
 }

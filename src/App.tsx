@@ -1,6 +1,14 @@
+import { useState } from "react";
 import Dropdown from "./components/Dropdown";
 
 const App = () => {
+    const [selection, setSelection] = useState<OptionProps | null>(null);
+
+
+    const handleSelect = (option: OptionProps) => {
+        setSelection(option);
+    }
+
     const options = [
         {
             label: "Red",
@@ -16,7 +24,13 @@ const App = () => {
         }
     ]
 
-    return <Dropdown options={options} />
+    return (
+        <div className="flex">
+            <Dropdown options={options} value={selection} onChange={handleSelect} />
+            <Dropdown options={options} value={selection} onChange={handleSelect} />
+        </div>
+        
+    )
 };
 
 export default App;
