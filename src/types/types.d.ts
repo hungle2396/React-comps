@@ -31,3 +31,7 @@ interface PanelProps extends React.HTMLAttributes<HTMLDivElement> {
     children: React.ReactNode;
     className?: string;
 }
+
+interface ModalProps {
+    onClose: () => void;
+}

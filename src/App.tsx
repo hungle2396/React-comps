@@ -1,14 +1,10 @@
-import { useState } from "react";
-import Modal from "./components/Modal";
-import Button from "./components/Button";
+import ModalPage from "./pages/ModalPage";
 
 const App = () => {
-    
 
     return (
         <div>
-            <Button primary>Open Modal</Button>
-            <Modal />
+            <ModalPage />
         </div>
     )
 };
