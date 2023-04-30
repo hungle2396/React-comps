@@ -2,9 +2,35 @@ import { useReducer } from "react";
 import Button from "../components/Button";
 import Panel from "../components/Panel";
 
+const INCREMENT_COUNT = "increment";
+const SET_VALUE_TO_ADD = "change_value_to_add";
+const DECREMENT_COUNT = "decrement";
+const ADD_VALUE_TO_COUNT = "add_value_to_count";
+
+
 const reducer = (state: State, action: Action) => {
     switch (action.type) {
-        // Implement reducer cases here
+        case INCREMENT_COUNT:
+            return {
+                ...state,
+                count: state.count + 1,
+            }
+        case DECREMENT_COUNT:
+            return {
+                ...state,
+                count: state.count - 1,
+            }
+        case SET_VALUE_TO_ADD:
+            return {
+                ...state,
+                valueToAdd: action.payload,
+            }
+        case ADD_VALUE_TO_COUNT:
+            return {
+                ...state,
+                count: state.count + state.valueToAdd,
+                valueToAdd: 0
+            }
         default:
             return state;
     }
@@ -17,23 +43,29 @@ const CounterPage = ({ initialCount }: { initialCount: number }) => {
     });
 
     const increment = () => {
-        dispatch({ type: "INCREMENT" });
+        dispatch({ type: INCREMENT_COUNT });
     }
 
     const decrement = () => {
-        dispatch({ type: "DECREMENT" });
+        dispatch({ type: DECREMENT_COUNT });
     }
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        console.log("in handleChange");
         const value = parseInt(event.target.value) || 0;
 
-        dispatch({ type: "SET_VALUE_TO_ADD", payload: value });
+        dispatch({ 
+            type: SET_VALUE_TO_ADD, 
+            payload: value
+        });
     }
 
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
 
-        dispatch({ type: "ADD_VALUE_TO_COUNT" });
+        dispatch({ 
+            type: ADD_VALUE_TO_COUNT 
+        });
     }
 
     return (
