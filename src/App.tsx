@@ -1,10 +1,10 @@
-import ModalPage from "./pages/ModalPage";
+import CounterPage from "./pages/CounterPage";
 
 const App = () => {
 
     return (
         <div>
-            <ModalPage />
+            <CounterPage initialCount={10} />
         </div>
     )
 };

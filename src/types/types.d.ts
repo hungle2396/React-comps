@@ -36,3 +36,13 @@ interface ModalProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     onClose: () => void;
     actionBar?: JSX.Element;
 }
+
+type State = {
+    count: number;
+    valueToAdd: number;
+}
+
+type Action = {
+    type: string;
+    payload?: any;
+}
